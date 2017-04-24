@@ -24,5 +24,3 @@ print rub
 print rub_comma(500 / 25, True)
 print rub_comma(2 * okrug2(x))
 print "{0}%".format((okrug2(x) - x) / okrug2(x) * 100)
-
-raw_input()
