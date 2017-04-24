@@ -5,11 +5,18 @@ import string
 
 
 def okrug2(num, depth=2):
+    # Округление числа до двух знаком после запятой
+    # Результат – число типа float
     return float(u"%.2f" % num)
     # return int(num * 10 ** depth + 0.5) / 10 ** depth
 
 
 def rub_comma(dot_num, new_format=False):
+    """ Замена десятичной точки на запятую.
+     
+    Замена десятичной точки на запятую с добавлением сокращения «руб.»    
+    Если new_format=True, добавляется знак ₽ вместо «руб.»
+    """
     if new_format:
         return u"{0}₽".format(string.replace(u"%.2f" % dot_num, ".", ","))
     else:
@@ -18,6 +25,7 @@ def rub_comma(dot_num, new_format=False):
 
 e = okrug2(math.e)
 rub = rub_comma(math.pi)
+
 x = 14 / 3
 
 print rub
