@@ -9,7 +9,7 @@ white_sheets_per_batch_65 = 250  # Число листов в пачке 65г/м
 color_paper_batch_cost = 650  # Цена пачки цветной бумаги
 color_sheets_per_batch = 250  # Число листов в пачке цветной бумаги
 
-pages_count = 101  # Всего страиц
+pages_count = 100  # Всего страиц
 
 pages_count_tetra = pages_count  # Число страниц кратных 4-м
 while pages_count_tetra % 4:
@@ -26,9 +26,14 @@ else:
 
 number_of_copies = 100  # Тираж
 defect = 3.0  # Брак в %
+white_sheets_per_cirulation = layout_sheets * number_of_copies  # Белых листов на тираж
+white_batches_per_cirulation = white_sheets_per_cirulation // white_sheets_per_batch_65  # Пачек белой бумаги на тираж
+color_sheets_per_cirulation = number_of_copies
 
 # ---------------------------------------------------------------------------------------------------------------------
 print "Страниц всего: {0}".format(pages_count)
 print "Страниц приведённых к 4-м: {0}".format(pages_count_tetra)
 print "Листов макета: {0}".format(layout_sheets)
 print "Число брошюр: {0}".format(brochure_count)
+print "Белых листов на тираж: {0}".format(white_sheets_per_cirulation)
+print "Пачек белой бумаги на тираж: {0}".format(white_batches_per_cirulation)
